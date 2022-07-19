@@ -8,8 +8,6 @@ module.exports = {
         }
     },
     dataBase: {
-        mainDb: {
-            host: `mongodb+srv://${mongoUser}:${mongoPass}@cluster0.lkptu.mongodb.net/?retryWrites=true&w=majority`
-        }
+        host: `mongodb+srv://${mongoUser}:${mongoPass}@cluster0.lkptu.mongodb.net/?retryWrites=true&w=majority`
     }
 }

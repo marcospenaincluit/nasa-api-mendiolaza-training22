@@ -6,7 +6,7 @@ const config = require('config');
 
 const indexRouter = require('./routes/index');
 const nasaRouter = require('./routes/nasa.router');
-const mongoConnectionString = config.get('dataBase.mainDb.host')
+const mongoConnectionString = config.get('dataBase.host')
 const app = express();
 
 const mongoose = require('mongoose');
@@ -17,10 +17,9 @@ mongoose
   })
   .then(() => console.log("connected to MONGODB"))
   .catch((err) => {
+    console.error(err);
     throw err;
   });
-
-
 
 app.use(logger('dev'));
 app.use(express.json());
