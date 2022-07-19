@@ -1,8 +1,0 @@
-{
-    "services": {
-        "nasa": {
-            "basepath": "https://api.nasa.gov",
-            "apod": "/planetary/apod"
-        }
-    }
-}
