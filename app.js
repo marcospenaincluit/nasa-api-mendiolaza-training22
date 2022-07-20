@@ -6,6 +6,7 @@ const config = require('config');
 
 const indexRouter = require('./routes/index');
 const nasaRouter = require('./routes/nasa.router');
+const usersRouter = require('./routes/users.router');
 const mongoConnectionString = config.get('dataBase.host')
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use('/nasa', nasaRouter);
+app.use('/users', usersRouter);
 
 
 module.exports = app;
