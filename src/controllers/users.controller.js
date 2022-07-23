@@ -1,5 +1,5 @@
 const User = require('../models/users.model');
-const { saveUser } = require('../services/databases/users.service');
+const { saveUser, deleteUser } = require('../services/databases/users.service');
 
 async function addUser(req, res){
     try {
@@ -63,9 +63,14 @@ async function updateUserById(req, res){
 }
 
 async function deleteUserById(req, res){
-    res.json({
-        msj: 'Hola desde ruta de delete'
-    })
+    try{
+        const { id } = req.params;
+        const result = await deleteUser(id);
+        res.json(result);
+    } catch(err){
+        res.status(err.status || 500);
+        res.json(err);
+    }
 }
 
 module.exports = { 
