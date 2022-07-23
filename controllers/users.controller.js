@@ -39,4 +39,26 @@ async function getUserById(req, res){
 
 }
 
-module.exports = { addUser , getUsers, getUserById};
+async function updateUserById(req, res){
+    const { id } = req.params;
+    const data = req.body;
+    await User.findById(id)
+        .then((user) => {
+            user.name = data.name;
+            user.province = data.province;
+            user.pets = data.pets;
+            user.save();
+            res.json({
+                operation: 'Edit user',
+                message: 'OK',
+                data: user,
+            })
+        }).catch((err) => {
+            res.status(400);
+            console.error(err);
+            res.json(err);
+        })
+        
+}
+
+module.exports = { addUser , getUsers, getUserById, updateUserById};
