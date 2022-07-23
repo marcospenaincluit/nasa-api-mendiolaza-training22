@@ -4,9 +4,9 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const config = require('config');
 
-const indexRouter = require('./routes/index');
-const nasaRouter = require('./routes/nasa.router');
-const usersRouter = require('./routes/users.router');
+const indexRouter = require('./src/routes/index');
+const nasaRouter = require('./src/routes/nasa.router');
+const usersRouter = require('./src/routes/users.router');
 const mongoConnectionString = config.get('dataBase.host')
 const app = express();
 
