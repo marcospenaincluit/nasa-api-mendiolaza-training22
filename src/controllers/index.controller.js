@@ -1,6 +1,6 @@
 function getIndex(req, res){
     res.json({
-        msj: "Hola mundo"
+        msj: "Hola mundo despues de desplegar con Heroku, WOW"
     });
 }
 
